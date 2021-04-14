@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fdc575f0-ef2c-4e15-9ff5-5d3eb8f29898" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1ptv6RT6YxFMq0F2mvu18GyZkMj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/index.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Denis\Downloads\OSPanel\domains\lab2" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/index.php">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdc575f0-ef2c-4e15-9ff5-5d3eb8f29898" name="Default Changelist" comment="" />
+      <created>1616015025425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616015025425</updated>
+      <workItem from="1616015026536" duration="695000" />
+      <workItem from="1616066521879" duration="11737000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="220" y="173" key="#CLI_Interpreters" timestamp="1616072643076">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="220" y="173" key="#CLI_Interpreters/0.40.1280.920@0.40.1280.920" timestamp="1616072643076" />
+    <state x="347" y="161" key="#PHP" timestamp="1616072649691">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="347" y="161" key="#PHP/0.40.1280.920@0.40.1280.920" timestamp="1616072649691" />
+    <state x="16" y="341" key="#SQL_Dialects" timestamp="1616066639868">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="16" y="341" key="#SQL_Dialects/0.40.1280.920@0.40.1280.920" timestamp="1616066639868" />
+    <state x="94" y="154" width="1092" height="729" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616072659998">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="94" y="154" width="1092" height="729" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1280.920@0.40.1280.920" timestamp="1616072659998" />
+    <state x="431" y="317" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1616068757547">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="431" y="317" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1280.920@0.40.1280.920" timestamp="1616068757547" />
+    <state x="370" y="246" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616073202726">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="370" y="246" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1280.920@0.40.1280.920" timestamp="1616073202726" />
+    <state x="420" y="254" key="FileChooserDialogImpl" timestamp="1616072596566">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="420" y="254" key="FileChooserDialogImpl/0.40.1280.920@0.40.1280.920" timestamp="1616072596566" />
+    <state x="416" y="222" key="NewPhpClassDialog" timestamp="1616068979759">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="416" y="222" key="NewPhpClassDialog/0.40.1280.920@0.40.1280.920" timestamp="1616068979759" />
+    <state x="474" y="423" key="NewPhpFileDialog" timestamp="1616068730764">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="474" y="423" key="NewPhpFileDialog/0.40.1280.920@0.40.1280.920" timestamp="1616068730764" />
+    <state x="141" y="144" key="SettingsEditor" timestamp="1616072666848">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="141" y="144" key="SettingsEditor/0.40.1280.920@0.40.1280.920" timestamp="1616072666848" />
+    <state x="483" y="271" key="refactoring.ChangeSignatureDialog" timestamp="1616069842172">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="483" y="271" key="refactoring.ChangeSignatureDialog/0.40.1280.920@0.40.1280.920" timestamp="1616069842172" />
+    <state x="303" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1616068653151">
+      <screen x="0" y="40" width="1280" height="920" />
+    </state>
+    <state x="303" y="235" width="672" height="678" key="search.everywhere.popup/0.40.1280.920@0.40.1280.920" timestamp="1616068653151" />
+  </component>
+</project>

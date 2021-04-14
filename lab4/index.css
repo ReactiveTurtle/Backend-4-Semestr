@@ -1,0 +1,100 @@
+body {
+}
+
+table {
+    box-shadow: 0 0 20px 4px lightgrey;
+    background: #eceff1;
+}
+
+form {
+    margin: 0;
+}
+
+input[type="text"], input[type="date"] {
+    display: block;
+    margin: 0 0 8px 0;
+    border: none;
+    background: #EAEAEA;
+    padding: 8px;
+    border-radius: calc(50vh);
+    outline: none;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mt-16px {
+    margin-top: 16px;
+}
+
+.selected-page {
+    background: deepskyblue !important;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.round-button {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 16px;
+    height: 16px;
+    box-sizing: content-box;
+    border-radius: calc(50vh);
+    background: #DEDEDE;
+}
+
+.round-button:hover {
+    cursor: pointer;
+    background: lightblue;
+}
+
+.tasks-tr {
+    background: #607d8b;
+}
+
+.tasks-td {
+    background: #eceff1;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: small;
+}
+
+.tasks-th, .tasks-td, .th-sort, .th-sort-submit {
+    font-family: 'Roboto', monospace;
+}
+
+.tasks-th, .th-sort, .th-sort-submit {
+    font-weight: 500;
+    font-size: medium;
+}
+
+.tasks-th, .th-sort {
+    color: white;
+    background: #607d8b;
+    text-align: center;
+    cursor: default;
+}
+
+.th-sort {
+    padding: 0;
+}
+
+.th-sort-submit {
+    width: 100%;
+    padding: 8px 16px;
+    color: white;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.th-sort-submit:hover {
+    cursor: pointer;
+    background: #34515e;
+}
