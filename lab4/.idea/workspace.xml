@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d3549e8-632e-4e13-af4b-1634419b3cd5" name="Default Changelist" comment="" />
+    <list default="true" id="5d3549e8-632e-4e13-af4b-1634419b3cd5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SearchPattern.php" beforeDir="false" afterPath="$PROJECT_DIR$/SearchPattern.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/TaskRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +15,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1qcggVBQYBiPCKuf7jB0DIxVEIA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,7 +40,8 @@
       <updated>1617384404395</updated>
       <workItem from="1617384405409" duration="1589000" />
       <workItem from="1617798154307" duration="9307000" />
-      <workItem from="1618404479418" duration="5786000" />
+      <workItem from="1618404479418" duration="15859000" />
+      <workItem from="1618588563231" duration="39000" />
     </task>
     <servers />
   </component>
@@ -39,14 +49,27 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1617798756322">
+    <state x="765" y="275" key="#com.intellij.ide.util.MemberChooser" timestamp="1618424510948">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state x="765" y="275" key="#com.intellij.ide.util.MemberChooser/0.40.1920.1040@0.40.1920.1040" timestamp="1618424510948" />
+    <state x="493" y="299" key="FileChooserDialogImpl" timestamp="1618588601526">
+      <screen x="0" y="40" width="1280" height="984" />
+    </state>
+    <state x="493" y="299" key="FileChooserDialogImpl/0.40.1280.984@0.40.1280.984" timestamp="1618588601526" />
     <state x="740" y="314" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1617798756322" />
     <state x="736" y="282" key="NewPhpClassDialog" timestamp="1618404543386">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="736" y="282" key="NewPhpClassDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1618404543386" />
+    <state x="803" y="331" key="refactoring.ChangeSignatureDialog" timestamp="1618424513739">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="803" y="331" key="refactoring.ChangeSignatureDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1618424513739" />
+    <state x="616" y="260" key="run.anything.popup" timestamp="1618424463061">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="616" y="260" key="run.anything.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1618424463061" />
     <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1618405949337">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

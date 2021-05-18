@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "acbb4ee5-a38a-42d2-a1bc-3bc30f475bb4",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "lab6",
+			"item": [
+				{
+					"name": "lab5/api/tasks/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "lab5/api/tasks/3",
+							"host": [
+								"lab5"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lab5/api/tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "lab5/api/tasks",
+							"host": [
+								"lab5"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lab5/api/tasks/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "taskName",
+									"value": "Hello",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hello world",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2019-01-03",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2019-01-09",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "low",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "lab5/api/tasks/add",
+							"host": [
+								"lab5"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lab5/api/tasks/8/update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Hello world",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2019-05-01",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2019-05-10",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "low",
+									"type": "text"
+								},
+								{
+									"key": "taskName",
+									"value": "Hello",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "lab5/api/tasks/8/update",
+							"host": [
+								"lab5"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"8",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lab5/api/tasks/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "deleteTaskIds[0]",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "deleteTaskIds[1]",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "lab5/api/tasks/delete",
+							"host": [
+								"lab5"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

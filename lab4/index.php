@@ -39,33 +39,36 @@ function getSearchPattern(): SearchPattern
     return new SearchPattern(
         $_GET['nameFilter'],
         $_GET['descriptionFilter'],
-        $_GET['startDateFilter'],
-        $_GET['endDateFilter'],
+        $_GET['startDateFilterStart'],
+        $_GET['startDateFilterEnd'],
+        $_GET['endDateFilterStart'],
+        $_GET['endDateFilterEnd'],
         $_GET['priorityFilter']);
 }
 
 $repository = new TaskRepository();
 
-$tasksCount = $repository->getTasksCount();
+$searchPattern = getSearchPattern();
+$tasksCount = $repository->getTasksCount($searchPattern);
 
 $pageElementsCount = max($_GET['pageElementsCount'] ?? 10, 1);
 $visiblePagesCount = 7;
+$orderByField = $_GET['orderByField'] ?? 'idTask';
+$sortDir = $_GET['sortDir'] ?? 'ASC';
 
 $pagination = new Pagination($tasksCount, $pageElementsCount, $visiblePagesCount);
 $pagesCount = $pagination->getPagesCount();
 $pageIndex = MathExtensions::clamp($_GET['pageIndex'] ?? 1, 1, $pagesCount);
 
-$visiblePageIndices = $pagination->getVisiblePageIndices($pageIndex);
-
-$orderByField = $_GET['orderByField'] ?? 'idTask';
-$sortDir = $_GET['sortDir'] ?? 'ASC';
-$searchPattern = getSearchPattern();
 $tasks = $repository->getTasks(
     $pageIndex - 1,
     $pageElementsCount,
     $orderByField,
     $sortDir,
     $searchPattern);
+
+
+$visiblePageIndices = $pagination->getVisiblePageIndices($pageIndex);
 const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
 ?>
 
@@ -112,14 +115,26 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
             <input type="text" value="<?= $searchPattern->getDescription() ?>"
                    name="descriptionFilter" placeholder="Описание">
         </label>
-        <label>
-            <input type="date" value="<?= $searchPattern->getStartDate() ?>"
-                   name="startDateFilter" placeholder="Дата начала">
-        </label>
-        <label>
-            <input type="date" value="<?= $searchPattern->getEndDate() ?>"
-                   name="endDateFilter" placeholder="Дата окончания">
-        </label>
+        <div>
+            <label>
+                <input type="date" value="<?= $searchPattern->getStartDateStart() ?>"
+                       name="startDateFilterStart" placeholder="Дата начала. Начало диапазона">
+            </label>
+            <label>
+                <input type="date" value="<?= $searchPattern->getStartDateEnd() ?>"
+                       name="startDateFilterEnd" placeholder="Дата начала. Конец диапазона">
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="date" value="<?= $searchPattern->getEndDateStart() ?>"
+                       name="endDateFilterStart" placeholder="Дата окончания. Начало диапазона">
+            </label>
+            <label>
+                <input type="date" value="<?= $searchPattern->getEndDateEnd() ?>"
+                       name="endDateFilterEnd" placeholder="Дата окончания. Конец диапазона">
+            </label>
+        </div>
         <label>
             <select name="priorityFilter">
                 <option value=""></option>
@@ -154,9 +169,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
 
 <div class="full-width">
     <form method="get">
-        <input name="pageElementsCount"
-               type="hidden"
-               value=<?= $pageElementsCount ?>>
+        <input name="pageElementsCount" type="hidden" value=<?= $pageElementsCount ?>>
+        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+        <input type="hidden" name="startDateFilterStart" value=<?= $searchPattern->getStartDateStart() ?>>
+        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
         <table class="center mt-16px">
             <tr class="tasks-tr">
                 <th class="th-sort">
@@ -165,6 +185,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageIndex ?>" name="pageIndex">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
                         <input type="hidden" value="idTask" name="orderByField">
+                        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+                        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+                        <input type="hidden" name="startDateFilterStart"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
                         <input class="th-sort-submit" type="submit" value="Id <?
                         if ($orderByField == 'idTask') {
                             echo getSortDirChar($sortDir);
@@ -183,6 +211,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageIndex ?>" name="pageIndex">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
                         <input type="hidden" value="name" name="orderByField">
+                        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+                        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+                        <input type="hidden" name="startDateFilterStart"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
                         <input class="th-sort-submit" type="submit" value="Name <?
                         if ($orderByField == 'name') {
                             echo getSortDirChar($sortDir);
@@ -201,6 +237,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageIndex ?>" name="pageIndex">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
                         <input type="hidden" value="description" name="orderByField">
+                        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+                        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+                        <input type="hidden" name="startDateFilterStart"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
                         <input class="th-sort-submit" type="submit" value="Description <?
                         if ($orderByField == 'description') {
                             echo getSortDirChar($sortDir);
@@ -219,6 +263,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageIndex ?>" name="pageIndex">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
                         <input type="hidden" value="startDate" name="orderByField">
+                        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+                        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+                        <input type="hidden" name="startDateFilterStart"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
                         <input class="th-sort-submit" type="submit" value="Start date <?
                         if ($orderByField == 'startDate') {
                             echo getSortDirChar($sortDir);
@@ -237,6 +289,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageIndex ?>" name="pageIndex">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
                         <input type="hidden" value="endDate" name="orderByField">
+                        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+                        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+                        <input type="hidden" name="startDateFilterStart"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
                         <input class="th-sort-submit" type="submit" value="End date <?
                         if ($orderByField == 'endDate') {
                             echo getSortDirChar($sortDir);
@@ -256,6 +316,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageIndex ?>" name="pageIndex">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
                         <input type="hidden" value="priority" name="orderByField">
+                        <input type="hidden" name="nameFilter" value=<?= $searchPattern->getName() ?>>
+                        <input type="hidden" name="descriptionFilter" value=<?= $searchPattern->getDescription() ?>>
+                        <input type="hidden" name="startDateFilterStart"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input type="hidden" name="startDateFilterEnd" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input type="hidden" name="endDateFilterStart" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input type="hidden" name="endDateFilterEnd" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input type="hidden" name="priorityFilter" value=<?= $searchPattern->getPriority() ?>>
                         <input class="th-sort-submit" type="submit" value="Priority <?
                         if ($orderByField == 'priority') {
                             echo getSortDirChar($sortDir);
@@ -287,9 +355,7 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                             <input type='hidden'
                                    name='deleteTaskId'
                                    value='<?= $taskId ?>'>
-                            <input type='hidden'
-                                   name='action'
-                                   value='DELETE_TASK'>
+                            <input type='hidden' name='action' value='DELETE_TASK'>
                         </form>
                     </td>
                 </tr>
@@ -303,6 +369,14 @@ const DECLARED_PRIORITIES = ['low', 'medium', 'high'];
                         <input type="hidden" value="<?= $pageElementsCount ?>" name="pageElementsCount">
                         <input type="hidden" value="<?= $orderByField ?>" name="orderByField">
                         <input type="hidden" value="<?= $sortDir ?>" name="sortDir">
+                        <input name="nameFilter" type="hidden" value=<?= $searchPattern->getName() ?>>
+                        <input name="descriptionFilter" type="hidden" value=<?= $searchPattern->getDescription() ?>>
+                        <input name="startDateFilterStart" type="hidden"
+                               value=<?= $searchPattern->getStartDateStart() ?>>
+                        <input name="startDateFilterEnd" type="hidden" value=<?= $searchPattern->getStartDateEnd() ?>>
+                        <input name="endDateFilterStart" type="hidden" value=<?= $searchPattern->getEndDateStart() ?>>
+                        <input name="endDateFilterEnd" type="hidden" value=<?= $searchPattern->getEndDateEnd() ?>>
+                        <input name="priorityFilter" type="hidden" value=<?= $searchPattern->getPriority() ?>>
                         <input type="submit"
                                class="round-button<?php if ($pageNumber + 1 == $pageIndex) echo ' selected-page' ?>"
                                name="pageIndex"

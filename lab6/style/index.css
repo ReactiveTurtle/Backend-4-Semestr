@@ -1,0 +1,72 @@
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.round-button {
+    outline: none;
+    padding: 8px;
+    width: 16px;
+    height: 16px;
+    box-sizing: content-box;
+    background: #DEDEDE;
+    color: white;
+
+    background: rgba( 255, 255, 255, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border-radius: calc(50vh);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.round-button.selected-page {
+    background: #62efff42 !important;
+}
+
+.round-button:hover {
+    cursor: pointer;
+    background: lightblue;
+}
+
+.th-sort form input[type=submit],
+.th-sort input[type=submit] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.th-sort form {
+    margin: 0;
+    width: 100%;
+}
+
+.th-sort form input[type=submit]:hover,
+.th-sort input[type=submit]:hover {
+    cursor: pointer;
+}
+
+.th-sort:hover {
+    background: #008ba3;
+}
+
+.th-actions-label {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.delete-button {
+    background: #d50000;
+}
+
+.delete-button:hover {
+    background: #9b0000;
+}

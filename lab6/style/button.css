@@ -1,0 +1,16 @@
+.button {
+    min-width: 100px;
+    border-radius: calc(100vh);
+    background: #00c853;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 12px 25px;
+    font-family: "Quicksand", Arial, sans-serif;
+    font-size: 14px;
+}
+
+.button:hover {
+    background: #009624;
+    cursor: pointer;
+}
